@@ -5,6 +5,7 @@ Write a function Javascript that takes two parameters. The first parameter will 
 Give a example of execution program
 
 Hint: Math.random() and Math.floor()
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
 
@@ -13,6 +14,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 Write a function that takes three parameters (three lengths of the sides of the triangle) and return the area of triangle
 
 Hint: Math.sqrt()
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt https://en.wikipedia.org/wiki/Heron%27s_formula
 
 ## Exercise 3
