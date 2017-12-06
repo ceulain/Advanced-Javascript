@@ -1,6 +1,6 @@
 # Introduction
 ## Exercise 1
-Write a function Javascript that takes two parameters. The first parameter will be  a random number between 0 and 10, the second parameter will be a number. If the random number match to the second parameter, the program will display "Good work" otherwise display a message "Not matched".
+Write a function that takes two parameters. The first parameter will be  a random number between 0 and 10, the second parameter will be a number. If the random number match to the second parameter, the program will display "Good work" otherwise display a message "Not matched".
 
 Give a example of execution program
 
@@ -19,7 +19,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 ## Exercise 3
 
-Write a function JavaScript that takes two numbers parameters and return the larger.
+Write a functionthat takes t wo numbers parameters and return the larger.
 
 ## Exercise 4
 
@@ -34,7 +34,7 @@ Write a JavaScript program that will iterate from 0 to 15. For each iteration, i
 
 ## Exercise 5
 
-Write a JavaScript function that takes one argument and return the type of argument
+Write a function that takes one argument and return the type of argument
 
 ## Exercise 6
 
@@ -50,4 +50,4 @@ Hint: As a reminder, a year is leap if it is divisible by 4 without being divisi
 
 ## Exercise 8
 
-Write a JavaScript function that takes two parameters two positive numbers and returns the largest common divisor (GCD).
+Write a function that takes two parameters two positive numbers and returns the largest common divisor (GCD).
