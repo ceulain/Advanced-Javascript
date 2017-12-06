@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Advanced JavaScript
+  ITM - SDM S9
+
+  EPITA
+
+<!-- SCOPE -->
+---
+class: center, middle
+
+# Scope
+
+???
+What is the scope?  Scope is the set of rules that determines where and how a variable (identifier) can be looked-up
+---
+#What is the scope?
+
+** Scope is the set of rules that determines where and how a variable (identifier) can be looked-up **
+
+## Three important entities :
+
+1. *** Engine : *** charge of **compilation** and **execution** of JavaScript program.
+
+2. *** Compiler ***: handles all the dirty work of parsing and code-generation.
+
+3. *** Scope ***: *** collects and maintains a look-up list *** of all the declared variables, and enforces a strict set of rules as to how these are accessible to currently executing code.
+
+
+
+<!-- SECOND SLIDE -->
+---
+class: center, middle
+
+# Hoisting
+
+<!-- THIRD SLIDE -->
+---
+class: left, middle
+  ```javascript
+a = 2;
+
+var a;
+
+console.log( a );
+```
+
+What do you expect ?
+<!-- FOURTH SLIDE -->
+---
+class: left, middle
+# And in this piece of code ?
+
+```javascript
+console.log( a );
+
+var a = 2;
+```
+???
+We have a `ReferenceError`
+<!-- FIFTH SLIDE -->
+---
+
+# Why ?
+
+** Variables and function are processed first before any part of your is executed **
+
+```javascript
+console.log( a );
+
+var a = 2;
+```
+We see this.
+
+```javascript
+/* Compilation time */
+
+var a;
+
+
+/* Execution time */
+
+console.log(a);
+
+a = 2;
+```
+JavaScript sees that.
+
+???
+When you see var a = 2;, you probably think of that as one statement. But JavaScript actually thinks of it as two statements: var a; and a = 2;. The first statement, the declaration, is processed during the compilation phase. The second statement, the assignment, is left in place for the execution phase.
+
+<!-- SIXTH SLIDE -->
+---
+
+```javascript
+console.log( a );
+
+var a = 2;
+```
+We see this.
+
+
+```javascript
+/* Compilation time */
+
+var a;
+
+
+/* Execution time */
+
+console.log( a );
+
+a = 2;
+```
+JavaScript sees that.
+
+<!-- SEVENTH SLIDE -->
+---
+** It's also important to note that hoisting is per-scope **
+
+```javascript
+function foo() {
+  var a;
+
+  console.log( a ); // undefined
+
+  a = 2;
+}
+
+foo();```
+
+The program is interpreted like this :
+
+```javascript
+function foo() {
+  var a;
+
+  console.log( a ); // undefined
+
+  a = 2;
+}
+
+foo();
+```
+<!-- HEIGTHT SLIDE -->
+---
+** Function expressions are not hoisted only function declarations **
+
+```javascript
+foo(); // TypeError!
+
+var foo = function bar() {
+  // ...
+};
+```
+<!-- NINTH SLIDE -->
+---
+# Function first
+
+```javascript
+foo(); // 1
+
+var foo;
+
+function foo() {
+  console.log( 1 );
+}
+
+foo = function() {
+  console.log( 2 );
+};
+```
+The snippet code is interpreted by JavaScript like this:
+
+```javascript
+function foo() {
+  console.log( 1 );
+}
+
+foo(); // 1
+
+foo = function() {
+  console.log( 2 );
+};```
+
+???
+Notice that var foo was the duplicate (and thus ignored) declaration, even though it came before the function foo()... declaration, because function declarations are hoisted before normal variables.
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
